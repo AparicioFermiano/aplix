@@ -1,0 +1,17 @@
+<nav class="navbar justify-content-between">
+    <span><a href="index.html"><img src="aplix/image/logo.png"></a></span>
+    <ul class="navbar-list d-flex justify-content-end">
+        <li class="navbar-item">
+            <a class="select" href="index.html">Inicio</a>
+        </li>
+        <li class="navbar-item">
+            <a href="categoria.html">Categoria</a>
+        </li>
+        <li class="navbar-item">
+            <a href="cadastro.html">Cadastro</a>
+        </li>
+        <li class="navbar-item">
+            <a href="lista.html">Lista</a>
+        </li>
+    </ul>
+</nav>

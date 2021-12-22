@@ -1,0 +1,13 @@
+<footer class="justify-content-between" metal:define-macro="footer">
+    <div class="my-auto">
+        Designer by Aparicio Fermiano
+    </div>
+    <div>
+        <span><a href="#"><img src="aplix/image/logo.png"></a></span>
+    </div>
+    <div class="light my-auto">
+        <a href=""><img src="https://img.icons8.com/material-outlined/24/000000/github.png"/></a>
+        <a href=""><img src="https://img.icons8.com/material-outlined/24/000000/instagram-new--v1.png"/></a>
+        <a href=""><img src="https://img.icons8.com/material-outlined/24/000000/whatsapp.png"/></a>
+    </div>
+</footer>
