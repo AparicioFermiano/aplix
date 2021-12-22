@@ -1,0 +1,29 @@
+<!--<ZOPEDIR>/Products/minimal/www/manage_add_minimal_action.dtml-->
+<html>
+	<head>
+		<title>Adicionar instancia minima</title>
+	</head>
+	<body bgcolor="#FFFFFF">
+		<h2>Adicionar instancia minima</h2>
+		<form name="form" action="manage_add_minimal_action" method="post"><br>
+			<label for="id">id</label><br>
+			<input type="text" name="id:string" size="30" required>
+			<br><br>
+			<p>
+				Database connection:
+				<select name="connection">
+					<dtml-in "SQLConnectionIDs()">
+					<option value="<dtml-var sequence-item>">
+						<dtml-var sequence-key>
+					</option>
+					</dtml-in>
+				</select>
+			</p>
+			<br><br>
+			<label for="title">title</label><br>
+			<input type="text" name="title:string" size="30" required>
+			<br><br>
+			<input type="submit" value="add">
+		</form>
+	</body>
+</html>

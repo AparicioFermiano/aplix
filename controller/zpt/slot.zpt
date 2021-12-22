@@ -1,0 +1,50 @@
+<html lang="pt-br" metal:define-macro="page">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aplix</title>
+        <link rel="stylesheet" href="aplix/css/style.css" tal:attributes="href context/aplix/css/style.css/absolute_url">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;600;700&display=swap" rel="stylesheet">
+        <metal:slot metal:define-slot="link"></metal:slot>
+    </head>
+
+    <nav class="navbar justify-content-between"  metal:define-slot="header">
+        <span><a href="index_py"><img src="aplix/image/logo.png"></a></span>
+        <ul class="navbar-list d-flex justify-content-end">
+            <li class="navbar-item select">
+                <a href="index_py">Inicio</a>
+            </li>
+            <li class="navbar-item">
+                <a href="categoria_py">Categoria</a>
+            </li>
+            <li class="navbar-item">
+                <a href="cadastro_py">Cadastro</a>
+            </li>
+            <li class="navbar-item">
+                <a href="lista_py">Lista</a>
+            </li>
+        </ul>
+    </nav>
+
+    <metal:slot metal:define-slot="sidebar">
+    </metal:slot>
+
+    <main metal:define-slot="main">
+    </main>
+
+    <footer class="justify-content-between" metal:define-slot="footer">
+        <div class="my-auto">
+            Designer by Aparicio Fermiano
+        </div>
+        <div>
+            <span><a href="#"><img src="aplix/image/logo.png"></a></span>
+        </div>
+        <div class="light my-auto">
+            <a href=""><img src="https://img.icons8.com/material-outlined/24/000000/github.png"/></a>
+            <a href=""><img src="https://img.icons8.com/material-outlined/24/000000/instagram-new--v1.png"/></a>
+            <a href=""><img src="https://img.icons8.com/material-outlined/24/000000/whatsapp.png"/></a>
+        </div>
+    </footer>
+</html>

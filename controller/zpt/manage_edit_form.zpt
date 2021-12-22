@@ -1,0 +1,14 @@
+<html>
+	<head>
+		<title>Gerenciar o minimo</title>
+	</head>
+	<body bgcolor="#FFFFFF">
+		<h2>Gerenciar o minimo</h2>
+		<form name="form" action="." method="post"><br>
+			<label for="title:string">title</label><br>
+			<input type="text" name="title:string" size="30" value="<dtml-var title>" required>
+			<br><br>
+			<input type="submit" name="manage_edit_action:method" value="Alterar">
+		</form>
+	</body>
+</html>
