@@ -10,7 +10,6 @@ def initialize(context):
     context.registerClass(
         minimal.minimal,
         constructors=(
-            minimal.manage_add_minimal_form,
             minimal.manage_add_minimal_action,
         )
     )

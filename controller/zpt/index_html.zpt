@@ -2,7 +2,7 @@
 <html lang="pt-br">
 	<head>
 		<metal:slot metal:fill-slot="link">
-		<link rel="stylesheet" href="/aplix/css/inicio.css" tal:attributes="href context/aplix/css/inicio.css/absolute_url">
+		<link rel="stylesheet" href="css/inicio.css" tal:attributes="href context/css/inicio.css/absolute_url">
 		</metal:slot>
 	</head>
 	<body>
@@ -11,7 +11,7 @@
 			<div class="d-flex container">
 				<div class="col-50">
 					<div class="slide">
-						<img class="image-cabecalho" src="http://localhost:8080/aplix/image/cabecalho.jpg">
+						<img class="image-cabecalho" src="http://localhost:8080/image/cabecalho.jpg">
 					</div>
 				</div>
 				<div class="col-50">

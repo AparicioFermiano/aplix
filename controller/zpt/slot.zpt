@@ -3,7 +3,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Aplix</title>
-        <link rel="stylesheet" href="aplix/css/style.css" tal:attributes="href context/aplix/css/style.css/absolute_url">
+        <link rel="stylesheet" href="css/style.css" tal:attributes="href context/css/style.css/absolute_url">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;600;700&display=swap" rel="stylesheet">
@@ -11,19 +11,19 @@
     </head>
 
     <nav class="navbar justify-content-between"  metal:define-slot="header">
-        <span><a href="index_py"><img src="aplix/image/logo.png"></a></span>
+        <span><a href="index_html"><img src="image/logo.png"></a></span>
         <ul class="navbar-list d-flex justify-content-end">
             <li class="navbar-item select">
-                <a href="index_py">Inicio</a>
+                <a href="index_html">Inicio</a>
             </li>
             <li class="navbar-item">
-                <a href="categoria_py">Categoria</a>
+                <a href="categoria_html">Categoria</a>
             </li>
             <li class="navbar-item">
-                <a href="cadastro_py">Cadastro</a>
+                <a href="cadastro_html">Cadastro</a>
             </li>
             <li class="navbar-item">
-                <a href="lista_py">Lista</a>
+                <a href="lista_html">Lista</a>
             </li>
         </ul>
     </nav>
@@ -39,7 +39,7 @@
             Designer by Aparicio Fermiano
         </div>
         <div>
-            <span><a href="#"><img src="aplix/image/logo.png"></a></span>
+            <span><a href="index_html"><img src="image/logo.png"></a></span>
         </div>
         <div class="light my-auto">
             <a href=""><img src="https://img.icons8.com/material-outlined/24/000000/github.png"/></a>
