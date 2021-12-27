@@ -14,11 +14,6 @@ class minimal(SimpleItem.SimpleItem):
 
     metodos = Metodos()
 
-    manage_options = (
-        {'label': 'Properties', 'action': 'manage_editForm'},
-        {'label': 'View', 'action': 'index_html'},
-    )
-
     def __init__(self, id, connection):
         """Initialize."""
         self.id = id
@@ -28,10 +23,6 @@ class minimal(SimpleItem.SimpleItem):
     def get_database_connection(self):
         """Database Connection."""
         return getattr(self.connection, 'id')
-
-    def index_html(self):
-        """Pagina principal."""
-        return self.metodos.index_html()
 
     def manage_edit_action(self, title, content, RESPONSE=None):
         """Altera os valores do produto."""
