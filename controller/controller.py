@@ -5,6 +5,7 @@
 
 from Products.PageTemplates.PageTemplateFile import PageTemplateFile
 from OFS import SimpleItem
+from ..model.model import Query
 
 
 class Metodos(SimpleItem.SimpleItem):
@@ -12,10 +13,12 @@ class Metodos(SimpleItem.SimpleItem):
 
     meta_type = 'controller'
 
+    query = Query()
+
     def index_html(self):
         """Pagina principal."""
         return self.index(macro_page=self.slot,
-                          select_filmes=self.model.zsql_select_filmes())
+                          select_filmes=self.query.zsql_select_filmes())
 
     def macros(self):
         """Slot de Macros."""

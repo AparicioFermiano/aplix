@@ -11,7 +11,7 @@ class Query(SimpleItem.SimpleItem):
 
     meta_type = 'query'
 
-    zope = '/home/aparicio/workspace/aplix-filmes/aplix-zope/Products/minimal'
+    zope = '/home/aparicio/workspace/aplix-filmes/aplix-zope/Products/minimal/'
 
     def get_filmes(self):
         """SQL SELECT FILMES FOR FILTER."""
@@ -22,5 +22,5 @@ class Query(SimpleItem.SimpleItem):
         title='',
         connection_id='connection',
         arguments='nome',
-        template=open(zope + '/model/zsql_select_filmes.sql').read()
+        template=open(zope + 'model/zsql_select_filmes.sql').read()
     )
