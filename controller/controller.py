@@ -11,6 +11,11 @@ from ..model.model import Query
 class Metodos(SimpleItem.SimpleItem):
     """Metodos dinamicos."""
 
+    manage_options = (
+        {'label': 'Properties', 'action': 'manage_editForm'},
+        {'label': 'View', 'action': 'index_html'},
+    )
+
     meta_type = 'controller'
 
     query = Query()
@@ -18,11 +23,7 @@ class Metodos(SimpleItem.SimpleItem):
     def index_html(self):
         """Pagina principal."""
         return self.index(macro_page=self.slot,
-                          select_filmes=self.query.zsql_select_filmes())
-
-    def macros(self):
-        """Slot de Macros."""
-        return self.slot()
+                          select_filmes=self.query.get_filmes())
 
     # Used to view content of the object.
 
