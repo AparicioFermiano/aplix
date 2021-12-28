@@ -1,0 +1,30 @@
+<metal:macro metal:use-macro="options/macro_page/macros/page">
+<html lang="pt-br">
+	<head>
+		<metal:slot metal:fill-slot="link">
+			<link rel="stylesheet" href="css/categoria.css" tal:attributes="href context/css/categoria.css/absolute_url">
+		</metal:slot>
+	</head>
+	<body>
+		<metal:slot metal:fill-slot="sidebar">
+			<div class="sidebar">
+				<div class="list">
+					<form action="categoria_html" method="POST">
+						<div class="box-list" tal:repeat="item options/select_categoria">
+							<button type="SUBMIT" class="list-item" tal:content="item/categoria" tal:attributes="value item/cod_categoria" name="cod_categoria"></button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</metal:slot>
+		<main metal:fill-slot="main" class="aside light">
+			<h2 class="my-2">Filmes</h2>
+			<div class="d-flex flex-wrap">
+				<div class="col-33 box-filme" tal:repeat="item options/select_filmes_for_cat">
+					<img src="" class="" alt="" tal:attributes="src item/imgurl">
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
+</metal:macro>

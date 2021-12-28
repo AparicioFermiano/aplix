@@ -11,19 +11,19 @@
     </head>
 
     <nav class="navbar justify-content-between"  metal:define-slot="header">
-        <span><a href="index_py"><img src="aplix/image/logo.png"></a></span>
+        <span><a href="/aplix/controller/index_html"><img src="aplix/image/logo.png"></a></span>
         <ul class="navbar-list d-flex justify-content-end">
             <li class="navbar-item select">
-                <a href="index_py">Inicio</a>
+                <a href="/aplix/controller/index_html">Inicio</a>
             </li>
             <li class="navbar-item">
-                <a href="categoria_py">Categoria</a>
+                <a href="/aplix/controller/categoria_html">Categoria</a>
             </li>
             <li class="navbar-item">
-                <a href="cadastro_py">Cadastro</a>
+                <a href="/aplix/controller/cadastro_html">Cadastro</a>
             </li>
             <li class="navbar-item">
-                <a href="lista_py">Lista</a>
+                <a href="/aplix/controller/lista_html">Lista</a>
             </li>
         </ul>
     </nav>
@@ -39,7 +39,7 @@
             Designer by Aparicio Fermiano
         </div>
         <div>
-            <span><a href="#"><img src="aplix/image/logo.png"></a></span>
+            <span><a href="/aplix/controller/index_html"><img src="aplix/image/logo.png"></a></span>
         </div>
         <div class="light my-auto">
             <a href=""><img src="https://img.icons8.com/material-outlined/24/000000/github.png"/></a>

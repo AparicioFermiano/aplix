@@ -4,7 +4,7 @@
 
 from OFS import SimpleItem
 from Globals import DTMLFile
-from controller.controller import Metodos
+from controller.controller import Controller
 
 
 class minimal(SimpleItem.SimpleItem):
@@ -12,7 +12,7 @@ class minimal(SimpleItem.SimpleItem):
 
     meta_type = 'minimal'
 
-    metodos = Metodos()
+    controller = Controller()
 
     def __init__(self, id, connection):
         """Initialize."""

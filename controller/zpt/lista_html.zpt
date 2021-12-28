@@ -1,0 +1,39 @@
+<metal:macro metal:use-macro="options/macro_page/macros/page">
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <metal:slot metal:fill-slot="link">
+            <link rel="stylesheet" href="css/lista.css" tal:attributes="href context/css/lista.css/absolute_url">
+            <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+        </metal:slot>
+    </head>
+    <body>
+        <main metal:fill-slot="main">
+            <div class="container-fluid">
+                <div class="lista">
+                    <table>
+                        <thead>
+                            <td>#</td>
+                            <td>Nome</td>
+                            <td>Elenco</td>
+                            <td>Categoria</td>
+                            <td>Url da Imagem</td>
+                            <td>Funcoes</td>
+                        </thead>
+                        <tbody>
+                        <tr tal:repeat="item options/select_filme">
+                            <td tal:context="item/cod_id">#</td>
+                            <td tal:context="item/nome">Nome</td>
+                            <td tal:context="item/elenco">Elenco</td>
+                            <td tal:context="item/categoria">Categoria</td>
+                            <td tal:context="item/imgurl">Url da Imagem</td>
+                            <td tal:context="item/cod_id">Funcoes</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
+</metal:macro>
