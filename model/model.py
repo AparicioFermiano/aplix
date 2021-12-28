@@ -33,6 +33,14 @@ class Query(SimpleItem.SimpleItem):
                                       imgurl=imgurl,
                                       sinopse=sinopse)
 
+    def get_filmes_for_id(self, cod_id):
+        """SELECT FILME FOR ID."""
+        return self.zsql_select_filme_for_id(cod_id=cod_id)
+
+    def delete_filmes_for_id(self, cod_id):
+        """DELETE FILME FOR ID."""
+        return self.zsql_delete_filme_for_id(cod_id=cod_id)
+
     zsql_select_filmes = SQL(
         id='zsql_select_filmes',
         title='',
@@ -61,4 +69,18 @@ class Query(SimpleItem.SimpleItem):
         connection_id='connection',
         arguments='nome\nelenco\ncod_categoria\nimgurl\nsinopse',
         template=open(zope + 'model/zsql_insert_filme.sql').read()
+    )
+    zsql_select_filme_for_id = SQL(
+        id='zsql_select_filme_for_id',
+        title='',
+        connection_id='connection',
+        arguments='cod_id',
+        template=open(zope + 'model/zsql_select_filme_for_id.sql').read()
+    )
+    zsql_delete_filme_for_id = SQL(
+        id='zsql_delete_filme_for_id',
+        title='',
+        connection_id='connection',
+        arguments='cod_id',
+        template=open(zope + 'model/zsql_delete_filme_for_id.sql').read()
     )

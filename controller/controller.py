@@ -46,8 +46,19 @@ class Controller(SimpleItem.SimpleItem):
                                                                   sinopse=sinopse))
 
     def lista_html(self):
-        """Cadastro de filmes."""
-        return self.lista(macro_page=self.slot)
+        """Listando os filmes."""
+        return self.lista(macro_page=self.slot,
+                          select_filmes=self.query.get_filmes())
+
+    def editar_filme_html(self, cod_id):
+        """Editar filmes."""
+        return self.editar(macro_page=self.slot,
+                           select_filmes_for_id=self.query.get_filmes_for_id(cod_id=cod_id))
+
+    def delete_filme_html(self, cod_id):
+        """Editar filmes."""
+        return self.editar(macro_page=self.slot,
+                           delete_filmes_for_id=self.query.delete_filmes_for_id(cod_id=cod_id))
 
     # Used to view content of the object.
 
@@ -58,6 +69,8 @@ class Controller(SimpleItem.SimpleItem):
     cadastro = PageTemplateFile('zpt/cadastro_html', globals())
 
     lista = PageTemplateFile('zpt/lista_html', globals())
+
+    editar = PageTemplateFile('zpt/editar_filme_html.zpt', globals())
 
     manage_edit_form = PageTemplateFile('zpt/manage_edit_form',
                                         globals())
