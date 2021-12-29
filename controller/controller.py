@@ -82,7 +82,8 @@ class Controller(SimpleItem.SimpleItem):
             categoria_id=categoria_id,
             imgurl=imgurl,
             sinopse=sinopse)
-        return self.REQUEST.RESPONSE.redirect('editar_filme_html')
+        return self.REQUEST.RESPONSE.redirect(
+            'editar_filme_html?cod_id=' + cod_id)
 
     # Used to view content of the object.
 

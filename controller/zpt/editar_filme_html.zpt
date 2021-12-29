@@ -8,10 +8,10 @@
         
         <form class="mx-auto mt-5 text-center" action="action_update" method="GET">
             <div class="forms-label">
-                <label class="light" for="codigo">Codigo: </label>
+                <label class="light" for="cod_id">Codigo: </label>
             </div>
             <div class="forms-item">
-                <input class="rounded" readonly type="text" name="cod_id" id="codigo" required tal:attributes="value item/cod_id">
+                <input class="rounded" readonly type="text" name="cod_id" id="cod_id" required tal:attributes="value item/cod_id">
             </div>
             <div class="forms-label">
                 <label class="light" for="nome">Nome do filme: </label>
