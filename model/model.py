@@ -27,11 +27,12 @@ class Query(SimpleItem.SimpleItem):
 
     def insert_filme(self, nome, elenco, categoria_id, imgurl, sinopse):
         """INSERT FOR FILME."""
-        return self.zsql_insert_filme(nome=nome,
-                                      elenco=elenco,
-                                      categoria_id=categoria_id,
-                                      imgurl=imgurl,
-                                      sinopse=sinopse)
+        return self.zsql_insert_filme(
+            nome=nome,
+            elenco=elenco,
+            categoria_id=categoria_id,
+            imgurl=imgurl,
+            sinopse=sinopse)
 
     def get_filmes_for_id(self, cod_id):
         """SELECT FILME FOR ID."""
@@ -41,14 +42,16 @@ class Query(SimpleItem.SimpleItem):
         """DELETE FILME FOR ID."""
         return self.zsql_delete_filme_for_id(cod_id=cod_id)
 
-    def update_filme(self, cod_id, nome, elenco, categoria_id, imgurl, sinopse):
+    def update_filme(self, cod_id, nome, elenco,
+                     categoria_id, imgurl, sinopse):
         """INSERT FOR FILME."""
-        return self.zsql_update_filme(cod_id=cod_id,
-                                      nome=nome,
-                                      elenco=elenco,
-                                      categoria_id=categoria_id,
-                                      imgurl=imgurl,
-                                      sinopse=sinopse)
+        return self.zsql_update_filme(
+            cod_id=cod_id,
+            nome=nome,
+            elenco=elenco,
+            categoria_id=categoria_id,
+            imgurl=imgurl,
+            sinopse=sinopse)
 
     zsql_select_filmes = SQL(
         id='zsql_select_filmes',
