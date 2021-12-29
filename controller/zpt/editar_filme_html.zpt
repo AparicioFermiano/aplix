@@ -27,7 +27,7 @@
                         <label class="light" for="categoria">Categoria: </label>
                     </div>
                     <div class="forms-item">
-                        <select class="rounded" name="cod_categoria" id="categoria" required tal:attributes="value item/cod_categoria">
+                        <select class="rounded" name="categoria_id" id="categoria" required tal:attributes="value item/categoria_id">
                             <option disabled selected value>-- Selecione uma opcao --</option>
                             <option value="1">Acao</option>
                             <option value="2">Aventura</option>

@@ -25,7 +25,7 @@
                                     <td tal:content="item/cod_id">#</td>
                                     <td tal:content="item/nome">Nome</td>
                                     <td tal:content="item/elenco">Elenco</td>
-                                    <td tal:content="item/cod_categoria">Categoria</td>
+                                    <td tal:content="item/categoria_id">Categoria</td>
                                     <td tal:content="item/imgurl">Url da Imagem</td>
                                     <td>
                                         <a class="icon" tal:attributes="href string:editar_filme_html?cod_id=${item/cod_id}"><i class="card-icon las la-edit"></i></a>

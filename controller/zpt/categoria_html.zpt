@@ -9,9 +9,9 @@
 		<metal:slot metal:fill-slot="sidebar">
 			<div class="sidebar">
 				<div class="list">
-					<form action="categoria_html" method="POST">
+					<form action="categoria_html" method="GET">
 						<div class="box-list" tal:repeat="item options/select_categoria">
-							<button type="SUBMIT" class="list-item" tal:content="item/categoria" tal:attributes="value item/cod_categoria" name="cod_categoria"></button>
+							<button type="SUBMIT" class="list-item" tal:content="item/categoria" tal:attributes="value item/cod_categoria" name="categoria_id"></button>
 						</div>
 					</form>
 				</div>

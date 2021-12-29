@@ -1,7 +1,7 @@
-<dtml-if cod_categoria>
+<dtml-if categoria_id>
      select * from filmes
      where
-     cod_categoria=<dtml-sqlvar cod_categoria type=int>
+     categoria_id=<dtml-sqlvar categoria_id type=int>
 <dtml-else>
      select * from filmes
 </dtml-if>

@@ -17,19 +17,19 @@ class Query(SimpleItem.SimpleItem):
         """SQL SELECT FILMES FOR FILTER."""
         return self.zsql_select_filmes()
 
-    def get_filmes_for_cat(self, cod_categoria):
+    def get_filmes_for_cat(self, categoria_id):
         """SQL SELECT FILMES FOR CATEGORIA."""
-        return self.zsql_select_filmes_for_categoria(cod_categoria=cod_categoria)
+        return self.zsql_select_filmes_for_categoria(categoria_id=categoria_id)
 
     def get_categoria(self):
         """SQL SELECT CATEGORIA."""
         return self.zsql_select_categoria()
 
-    def insert_filme(self, nome, elenco, cod_categoria, imgurl, sinopse):
+    def insert_filme(self, nome, elenco, categoria_id, imgurl, sinopse):
         """INSERT FOR FILME."""
         return self.zsql_insert_filme(nome=nome,
                                       elenco=elenco,
-                                      cod_categoria=cod_categoria,
+                                      categoria_id=categoria_id,
                                       imgurl=imgurl,
                                       sinopse=sinopse)
 
@@ -53,7 +53,7 @@ class Query(SimpleItem.SimpleItem):
         id='zsql_select_filmes_for_categoria',
         title='',
         connection_id='connection',
-        arguments='cod_categoria',
+        arguments='categoria_id',
         template=open(zope + 'model/zsql_select_filmes_for_cat.sql').read()
     )
     zsql_select_categoria = SQL(
@@ -67,7 +67,7 @@ class Query(SimpleItem.SimpleItem):
         id='zsql_insert_filme',
         title='',
         connection_id='connection',
-        arguments='nome\nelenco\ncod_categoria\nimgurl\nsinopse',
+        arguments='nome\nelenco\ncategoria_id\nimgurl\nsinopse',
         template=open(zope + 'model/zsql_insert_filme.sql').read()
     )
     zsql_select_filme_for_id = SQL(

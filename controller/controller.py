@@ -25,10 +25,10 @@ class Controller(SimpleItem.SimpleItem):
         return self.index(macro_page=self.slot,
                           select_filmes=self.query.get_filmes())
 
-    def categoria_html(self, cod_categoria=None):
+    def categoria_html(self, categoria_id=None):
         """Categoria de filmes."""
         return self.categoria(macro_page=self.slot,
-                              select_filmes_for_cat=self.query.get_filmes_for_cat(cod_categoria=cod_categoria),
+                              select_filmes_for_cat=self.query.get_filmes_for_cat(categoria_id=categoria_id),
                               select_categoria=self.query.get_categoria())
 
     def cadastro_html(self):
@@ -36,12 +36,12 @@ class Controller(SimpleItem.SimpleItem):
         return self.cadastro(macro_page=self.slot)
 
     def action_insert(self, nome=None, elenco=None,
-                      cod_categoria=None, imgurl=None, sinopse=None):
+                      categoria_id=None, imgurl=None, sinopse=None):
         """Insert filmes."""
         return self.cadastro(macro_page=self.slot,
                              insert_filme=self.query.insert_filme(nome=nome,
                                                                   elenco=elenco,
-                                                                  cod_categoria=cod_categoria,
+                                                                  categoria_id=categoria_id,
                                                                   imgurl=imgurl,
                                                                   sinopse=sinopse))
 
@@ -60,6 +60,11 @@ class Controller(SimpleItem.SimpleItem):
         return self.editar(macro_page=self.slot,
                            delete_filmes_for_id=self.query.delete_filmes_for_id(cod_id=cod_id))
 
+    def infofilme_html(self, cod_id):
+        """Editar filmes."""
+        return self.infofilme(macro_page=self.slot,
+                              select_filmes_for_id=self.query.get_filmes_for_id(cod_id=cod_id))
+
     # Used to view content of the object.
 
     index = PageTemplateFile('zpt/index_html', globals())
@@ -71,6 +76,8 @@ class Controller(SimpleItem.SimpleItem):
     lista = PageTemplateFile('zpt/lista_html', globals())
 
     editar = PageTemplateFile('zpt/editar_filme_html.zpt', globals())
+
+    infofilme = PageTemplateFile('zpt/infofilme_html.zpt', globals())
 
     manage_edit_form = PageTemplateFile('zpt/manage_edit_form',
                                         globals())
