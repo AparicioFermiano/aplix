@@ -57,13 +57,26 @@ class Controller(SimpleItem.SimpleItem):
 
     def delete_filme_html(self, cod_id):
         """Editar filmes."""
-        return self.editar(macro_page=self.slot,
-                           delete_filmes_for_id=self.query.delete_filmes_for_id(cod_id=cod_id))
+        return self.lista(macro_page=self.slot,
+                          delete_filmes_for_id=self.query.delete_filmes_for_id(cod_id=cod_id),
+                          select_filmes=self.query.get_filmes())
 
     def infofilme_html(self, cod_id):
         """Editar filmes."""
         return self.infofilme(macro_page=self.slot,
                               select_filmes_for_id=self.query.get_filmes_for_id(cod_id=cod_id))
+
+    def action_update(self, cod_id=None, nome=None, elenco=None,
+                      categoria_id=None, imgurl=None, sinopse=None):
+        """Update filmes."""
+        return self.editar(macro_page=self.slot,
+                           select_filmes_for_id=self.query.get_filmes_for_id(cod_id=cod_id),
+                           update_filme=self.query.update_filme(cod_id=cod_id,
+                                                                nome=nome,
+                                                                elenco=elenco,
+                                                                categoria_id=categoria_id,
+                                                                imgurl=imgurl,
+                                                                sinopse=sinopse))
 
     # Used to view content of the object.
 

@@ -41,6 +41,15 @@ class Query(SimpleItem.SimpleItem):
         """DELETE FILME FOR ID."""
         return self.zsql_delete_filme_for_id(cod_id=cod_id)
 
+    def update_filme(self, cod_id, nome, elenco, categoria_id, imgurl, sinopse):
+        """INSERT FOR FILME."""
+        return self.zsql_update_filme(cod_id=cod_id,
+                                      nome=nome,
+                                      elenco=elenco,
+                                      categoria_id=categoria_id,
+                                      imgurl=imgurl,
+                                      sinopse=sinopse)
+
     zsql_select_filmes = SQL(
         id='zsql_select_filmes',
         title='',
@@ -83,4 +92,11 @@ class Query(SimpleItem.SimpleItem):
         connection_id='connection',
         arguments='cod_id',
         template=open(zope + 'model/zsql_delete_filme_for_id.sql').read()
+    )
+    zsql_update_filme = SQL(
+        id='zsql_update_filme',
+        title='',
+        connection_id='connection',
+        arguments='cod_id\nnome\nelenco\ncategoria_id\nimgurl\nsinopse',
+        template=open(zope + 'model/zsql_update_filme.sql').read()
     )
