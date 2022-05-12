@@ -1,52 +1,46 @@
 <metal:macro metal:use-macro="options/macro_page/macros/page">
-<html lang="pt-br">
-	<head>
-		<metal:slot metal:fill-slot="link">
-		<link rel="stylesheet" href="/aplix/css/inicio.css" tal:attributes="href context/aplix/css/inicio.css/absolute_url">
-		</metal:slot>
-	</head>
-	<body>
-		<main metal:fill-slot="main">
-			<!--Cabecalho-->
-			<div class="d-flex container">
-				<div class="col-50">
-					<div class="slide">
-						<img class="image-cabecalho" src="http://localhost:8080/aplix/image/cabecalho.jpg">
-					</div>
+<metal:slot metal:fill-slot="link">
+<link rel="stylesheet" href="/aplix/css/inicio.css" tal:attributes="href context/css/inicio.css/absolute_url">
+</metal:slot>
+<main metal:fill-slot="main">
+	<!--Cabecalho-->
+	<div class="d-flex container">
+		<div class="col-50">
+			<div class="slide">
+				<img class="image-cabecalho" src="http://localhost:8080/aplix/image/cabecalho.jpg">
+			</div>
+		</div>
+		<div class="col-50">
+			<div class="cabecalho">
+				<div class="cabecalho-title light text-right">Que tal ver a nota dos seus filmes<p>favoritos?</p></div>
+				<div class="cabecalho-text">Aqui voce acompanha todas novidades, notas, criticas e todas informacoes sobre os filmes que voce mais gosta.
+					Ative as notificacoes para receber as noticias em primeira mao.
 				</div>
-				<div class="col-50">
-					<div class="cabecalho">
-						<div class="cabecalho-title light text-right">Que tal ver a nota dos seus filmes<p>favoritos?</p></div>
-						<div class="cabecalho-text">Aqui voce acompanha todas novidades, notas, criticas e todas informacoes sobre os filmes que voce mais gosta.
-							Ative as notificacoes para receber as noticias em primeira mao.
+			</div>
+		</div>
+	</div>
+	<div id="main" class="container">
+		<p class="cabecalho-title text-center pt-2">Busque o filme que deseja:</p>
+		<form class="mt-2" action="#main" method="GET">
+			<div class="d-flex justify-content-center">
+				<input class="input w-50 input-buscar" name="nome" value="">
+				<input class="btn btn-border-primary"type=SUBMIT name="SUBMIT" value="Buscar">
+			</div>
+		</form>
+		<div class="d-flex justify-content-around row">
+			<div class="col-33" tal:repeat="item options/select_filmes">
+				<a tal:attributes="href string: infofilme_html?cod_id=${item/cod_id}">
+					<div class="card">
+						<img class="card-image" src=""
+						tal:attributes = "src item/imgurl">
+						<div class="card-body">
+							<div class="card-title" tal:content="item/nome">Titulo</div>
+							<div class="card-text" tal:content="item/elenco">Elenco</div>
 						</div>
 					</div>
-				</div>
+				</a>
 			</div>
-			<div id="main" class="container">
-				<p class="cabecalho-title text-center pt-2">Busque o filme que deseja:</p>
-				<form class="mt-2" action="#main" method="GET">
-					<div class="d-flex justify-content-center">
-						<input class="input w-50 input-buscar" name="nome" value="">
-						<input class="btn btn-border-primary"type=SUBMIT name="SUBMIT" value="Buscar">
-					</div>
-				</form>
-				<div class="d-flex justify-content-around row">
-					<div class="col-33" tal:repeat="item options/select_filmes">
-						<a tal:attributes="href string: http://localhost:8080/aplix_template/files/infofilme_py?cod_id=${item/cod_id}">
-							<div class="card">
-								<img class="card-image" src="http://localhost:8080/aplix/image/alerta-vermelho.png"
-								tal:attributes = "src item/imgurl">
-								<div class="card-body">
-									<div class="card-title" tal:content="item/nome">Titulo</div>
-									<div class="card-text" tal:content="item/elenco">Elenco</div>
-								</div>
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		</main>
-	</body>
-</html>
+		</div>
+	</div>
+</main>
 </metal:macro>

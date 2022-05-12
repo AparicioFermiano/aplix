@@ -1,0 +1,46 @@
+<metal:macro metal:use-macro="options/macro_page/macros/page">
+<metal:slot metal:fill-slot="link">
+<link rel="stylesheet" href="css/filmes.css">
+</metal:slot>
+<main metal:fill-slot="main">
+    <div class="filme d-flex" tal:repeat="item options/select_filmes_for_id">
+        <div class="box-image">
+            <img class="filme-image" tal:attributes="src item/imgurl">
+        </div>
+        <div class="filme-body">
+            <h1 class="title" tal:content="item/nome">Titulo</h1>
+            <div class="d-flex">
+                <div class="filme-box">
+                    <div class="filme-title">Titulo Original</div>
+                    <div class="filme-text" tal:content="item/nome">Titulo</div>
+                </div>
+                <div class="filme-box">
+                    <div class="filme-title">Elenco</div>
+                    <div class="filme-text" tal:content="item/elenco">Elenco</div>
+                </div>
+                <div class="filme-box">
+                    <div class="filme-title">Direcao</div>
+                    <div class="filme-text">NONE</div>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="filme-box">
+                    <div class="filme-title">Data de lancamento</div>
+                    <div class="filme-text">NONE</div>
+                </div>
+                <div class="filme-box">
+                    <div class="filme-title">Duracao</div>
+                    <div class="filme-text">NONE</div>
+                </div>
+                <div class="filme-box">
+                    <div class="filme-title">Categoria</div>
+                    <div class="filme-text" tal:content="item/categoria">Categoria</div>
+                </div>
+            </div>
+            <div class="filme-title light mt-2">SINOPSE</div>
+            <p class="filme-text light" tal:content="item/sinopse">Sinopse</p>
+            <div class="alert mt-2">Nao recomendado para menores de NONE</div>
+        </div>
+    </div>
+</main>
+</metal:macro>

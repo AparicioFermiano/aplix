@@ -1,0 +1,37 @@
+<metal:macro metal:use-macro="options/macro_page/macros/page">
+<metal:slot metal:fill-slot="link">
+<link rel="stylesheet" href="css/lista.css" tal:attributes="href context/css/lista.css/absolute_url">
+<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+</metal:slot>
+<main metal:fill-slot="main">
+    <div class="container-fluid">
+        <div class="lista">
+            <table>
+                <thead>
+                    <td>#</td>
+                    <td>Nome</td>
+                    <td>Elenco</td>
+                    <td>Categoria</td>
+                    <td>Url da Imagem</td>
+                    <td>Funcoes</td>
+                </thead>
+                <tbody>
+                    <div tal:repeat="item options/select_filmes">
+                        <tr>
+                            <td tal:content="item/cod_id">#</td>
+                            <td tal:content="item/nome">Nome</td>
+                            <td tal:content="item/elenco">Elenco</td>
+                            <td tal:content="item/categoria_id">Categoria</td>
+                            <td tal:content="item/imgurl">Url da Imagem</td>
+                            <td>
+                                <a class="icon" tal:attributes="href string:editar_filme_html?cod_id=${item/cod_id}"><i class="card-icon las la-edit"></i></a>
+                                <a tal:attributes="href string:delete_filme_html?cod_id=${item/cod_id}"><i class="card-icon icon las la-window-close"></i></a>
+                            </td>
+                        </tr>
+                    </div>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+</metal:macro>
