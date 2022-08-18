@@ -6,7 +6,7 @@
 from Products.PageTemplates.PageTemplateFile import PageTemplateFile
 from OFS import SimpleItem
 from ..model.model import Query
-
+# teste
 
 class Metodos(SimpleItem.SimpleItem):
     """Metodos dinamicos."""
